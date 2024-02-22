@@ -18,11 +18,26 @@ export const possibleTileContents = [
 
 export function StartScreen({ start }) {
   return (
-    <div>
-      <button onClick={start} className="bg-gray-400 text-white p-3">
-        Play
-      </button>
-    </div>
+    <>
+      <div className="flex justify-center items-center mt-[50%]">
+        <div className="py-[2rem] px-8 text-center bg-[#FDF3F8] rounded-xl">
+          <h1 className="text-[2rem] text-[#E85097] font-bold pb-[2rem]">
+            Memory
+          </h1>
+
+          <p className={"text-[1rem] text-[#E85097] font-semibold pb-[2rem]"}>
+            Flip over tiles looking for pairs
+          </p>
+
+          <button
+            onClick={start}
+            className="bg-[#E85097] text-white py-2 px-10 rounded-3xl"
+          >
+            Play
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
 

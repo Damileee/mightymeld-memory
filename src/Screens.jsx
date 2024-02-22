@@ -19,7 +19,7 @@ export const possibleTileContents = [
 export function StartScreen({ start }) {
   return (
     <>
-      <div className="flex justify-center items-center mt-[50%]">
+      <div className="flex justify-center items-center mt-[10%]">
         <div className="py-[2rem] px-8 text-center bg-[#FDF3F8] rounded-xl">
           <h1 className="text-[2rem] text-[#E85097] font-bold pb-[2rem]">
             Memory
@@ -124,12 +124,21 @@ export function PlayScreen({ end }) {
 
   return (
     <>
-      <div>
-        {getTiles(6).map((tile, i) => (
-          <Tile key={i} flip={() => flip(i)} {...tile} />
-        ))}
+      <div className="flex justify-center align-middle items-center flex-col mt-[10%]">
+        <div className="mb-8">
+          <span className="text-[#6466F1] text-lg font-semibold">Tries</span>{" "}
+          <span className="text-[#6A64EB] px-2 pb-[0.19rem] font-bold rounded text-lg bg-[#C7D2FF]">
+            {tryCount}
+          </span>
+        </div>
+        <div className="flex justify-center align-middle bg-[#EEF2FF] p-4 rounded-xl">
+          <div className="grid grid-cols-3 gap-1">
+            {getTiles(6).map((tile, i) => (
+              <Tile key={i} flip={() => flip(i)} {...tile} />
+            ))}
+          </div>
+        </div>
       </div>
-      {tryCount}
     </>
   );
 }
